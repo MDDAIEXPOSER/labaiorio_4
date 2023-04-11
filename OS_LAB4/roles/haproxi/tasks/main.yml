@@ -8,7 +8,7 @@
       - libselinux-python3
     state: latest
   tags: 
-    - haproxik
+    - haproxi
 
 - name: Template a file to /etc/haproxy/haproxy.conf
   ansible.builtin.template:
@@ -19,7 +19,7 @@
   notify:
     - Start and enabled haproxy
   tags: 
-    - haproxik
+    - haproxi
     - haproxy
 
 - ansible.posix.sysctl:
@@ -27,7 +27,7 @@
     value: '1'
     sysctl_set: true
   tags: 
-    - haproxik
+    - haproxi
 
 - name: Template a file to /etc/keepalived/keepalived.conf
   ansible.builtin.template:
@@ -38,4 +38,4 @@
   notify:
     - Start and enabled keepalived
   tags: 
-    - haproxik
+    - haproxi
